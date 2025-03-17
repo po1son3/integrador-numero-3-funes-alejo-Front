@@ -1,13 +1,12 @@
-import React from 'react'
 import { BrowserRouter } from 'react-router'
 import Rutas from './routes/Rutas'
-import Navbar from './components/Navbar'
+import Cabecera from './components/Cabecera'
 import Footer from './components/Footer'
 
 const App = () => {
   return (
     <BrowserRouter>
-    <Navbar />
+    <Cabecera />  
     <Rutas />
     <Footer />
     
