@@ -1,0 +1,66 @@
+/* ----------------------------------------------- */
+/* NAVBAR                                          */
+/* ----------------------------------------------- */
+
+.nav-bar {
+    display: flex ;
+    background-color: #272A29;
+    display: none;
+    border: 1px solid #1D201F;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+
+    @media screen and (min-width: 992px) {
+        & {
+            display: block;
+        }
+    }
+
+    &__nav-list { /* .nav-bar__nav-list */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style-type: none;
+        width: auto;
+        
+    @media screen and (min-width: 992px) {
+            
+    
+    flex-direction: row;
+                
+            
+    }
+}
+
+    &__nav-item { /* .nav-bar__nav-item */
+    text-align: center;
+    
+    
+}
+
+    &__nav-link{ /* este es el inico, alta,contacto,nosotros */
+    display: block;
+    background-color: #383D3B;
+    padding: 1rem 2rem;
+    color: #EAECEB;
+    box-shadow: 0px 1px 2px #383D3B;
+    width: 100%;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+
+}
+    
+    &__nav-link:hover{ /*  esto hace que al pasar el mouse sobre los nav links haya un efecto hover de color negro */
+    background-color: black;
+}
+    
+    @media screen and (min-width: 992px) {
+    & {
+
+        display: block;
+        
+    }
+}
+
+}
