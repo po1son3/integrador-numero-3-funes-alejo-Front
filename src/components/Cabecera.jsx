@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchBar from './SearchBar'
 import Navbar from './Navbar'
+import './Cabecera.scss'
 
 const Cabecera = () => {
 return (
