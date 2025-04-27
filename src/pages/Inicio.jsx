@@ -1,5 +1,5 @@
 import Card from "../components/Card"
-
+import './Inicio.scss'
 const Inicio = () => {
   return (
   <main>
