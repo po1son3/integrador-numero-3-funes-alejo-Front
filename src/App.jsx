@@ -6,8 +6,11 @@ import Footer from './components/Footer'
 const App = () => {
   return (
     <BrowserRouter>
+
     <Cabecera />  
+
     <Rutas />
+    
     <Footer />
     
     

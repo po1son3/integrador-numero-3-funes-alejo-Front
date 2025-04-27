@@ -1,7 +1,7 @@
+import Card from "../components/Card"
 
 const Inicio = () => {
   return (
-  
   <main>
     <section className="section-cards">
       <header className="section-cards__header">
@@ -9,10 +9,12 @@ const Inicio = () => {
         <p>Se encontraron 5 productos</p>
       </header>
     </section>
-    <div className="cards-container" id="container-productos"></div>
+    <div className="cards-container" id="container-productos">
+    <Card />  
+    </div>
   </main>
 
-  );
-};
+  )
+}
 
-export default Inicio;
+export default Inicio
