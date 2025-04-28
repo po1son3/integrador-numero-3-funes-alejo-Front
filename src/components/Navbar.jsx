@@ -1,22 +1,27 @@
+import menuItems from '../constants/menuItems'
 import './Navbar.scss'
-const Navbar = () => {
+import NavItem from './NavItem'
+const Navbar = ({item}) => {
+  
+
+
+
   return (
     <nav className="nav-bar">
     <ul className="nav-bar__nav-list">
 
-      <li className="nav-bar__nav-item">
-        <a href="/index.html" className="nav-bar__nav-link">Inicio</a>
-      </li>
-      <li className="nav-bar__nav-item">
-        <a href="" className="nav-bar__nav-link">Alta</a>
-          </li>
-          <li className="nav-bar__nav-item">
-            <a href="/src/pages/nosotros/nosotros.html" className="nav-bar__nav-link">Nosotros</a>
-          </li>
-          <li className="nav-bar__nav-item">
-            <a href="src/pages/contacto/contacto.html" className="nav-bar__nav-link">Contacto</a>
-          </li>
-        </ul>
+    {
+      menuItems.map((item) => ( // por cada item(alta, nosotros, contacto, inicio) tengo un recorrido.Acordate que mapa recorre cada objeto del array.Item(es cada item del array, un elemento === item)
+        <NavItem item={item} key={item.id} />
+      /* <li className="nav-bar__nav-item">
+        <a href="/index.html" className="nav-bar__nav-link">
+        Inicio
+        </a>
+      </li> */
+
+      ))
+    }
+      </ul>
       </nav> 
   )
 }
