@@ -2,8 +2,12 @@ import { useContext } from "react"
 import Card from "../components/Card"
 import './Inicio.scss'
 import ProductosContext from "../contexts/ProductosContext"
+import useTitulo from "../hooks/useTitulo"
 const Inicio = () => {
   const { productos } = useContext(ProductosContext)
+  useTitulo('Inicio')
+
+
   return (
   <main>
     <section className="section-cards">
