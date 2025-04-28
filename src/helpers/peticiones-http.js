@@ -6,6 +6,7 @@ export const peticionesHttp = async (url, options) => {
     }
     const data = await res.json()
     console.log(data)
+    return data
     } catch (error) {
     console.error( '[peticionesHttp]' ,error.message)
     }
