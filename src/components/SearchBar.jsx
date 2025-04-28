@@ -6,7 +6,7 @@ const SearchBar = () => {
       <span className="texto-largo">Luxury Paradise</span>
       <span className="texto-corto">LP</span>
     </div>
-    <form action="#" class="search-bar__form-container">
+    <form action="#" className="search-bar__form-container">
       <label htmlFor="busqueda" className="search-bar__form-label">Buscar Productos</label>
       <input type="search" id="busqueda" className="search-bar__form-search" />
       <button type="submit" className="search-bar__form-submit">Buscar</button>

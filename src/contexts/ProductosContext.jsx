@@ -21,6 +21,18 @@ const getAllProductos = async () => {
     }
 }
 
+const crearProductoContext = (productoNuevo) => {// recibe producto nuevo
+    try {
+    const options = {
+        method: 'POST',
+        header:{'content-type': 'application/json'},
+        body: JSON.stringify(productoNuevo) // espera un string
+    }
+    } catch (error) {
+    console.error(error)
+    }
+}
+
     const data = { // recibe todos los props
     productos
     }
