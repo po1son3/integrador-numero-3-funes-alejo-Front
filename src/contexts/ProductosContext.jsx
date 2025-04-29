@@ -6,6 +6,8 @@ const ProductosContext = createContext()
 const ProductosProvider = ({children}) => { // aca va el contenido, recibe children
 const url = import.meta.env.VITE_BACKEND_PRODUCTOS
 const [productos, setProductos] = useState(null) // esto está null porque productos hasta ahora por defecto está vacío.
+
+const [productoAEditar, setProductoAEditar] = useState(null)
 useEffect(() => {
     getAllProductos()
 
@@ -26,7 +28,7 @@ const crearProductoContext = async (productoNuevo) => {// recibe producto nuevo
     delete productoNuevo.id
     const options = {
         method: 'POST',
-        header:{'content-type': 'application/json'},
+        headers:{'content-type': 'application/json'},
         body: JSON.stringify(productoNuevo) // espera un string
     }
 
@@ -38,9 +40,37 @@ const crearProductoContext = async (productoNuevo) => {// recibe producto nuevo
     console.error('[crearProductoContext]',error)
     }
 }
-const actualizarProductoContext = (productoAEditar) => {
+
+
+
+
+
+const actualizarProductoContext = async (productoAEditar) => {
+console.log('Producto a editar:', productoAEditar);
+console.log('URL a actualizar:', url + productoAEditar.id);
+console.log('Body enviado:', JSON.stringify(productoAEditar));
+
+console.log(productoAEditar)
+try {
+    const options = {
+        method: 'PUT',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(productoAEditar)
+    }
+    const urlActualizar = url + productoAEditar.id
+     const productoEditado = await peticionesHttp(urlActualizar, options)
+     console.log(productoEditado)
+     const nuevoEstadoProductos = productos.map(prod => prod.id === productoEditado.id ? productoEditado : prod)
+     setProductos(nuevoEstadoProductos)
+    } catch (error) {
+        console.error('[actualizarProductoContext]', error)
+    }
 
 }
+
+
+
+
 const eliminarProductoContext = async (id) => {
     try {
         const urlEliminacion = url + id
@@ -49,8 +79,11 @@ const eliminarProductoContext = async (id) => {
         }
         const prodEliminado = await peticionesHttp(urlEliminacion, options)
         console.log(prodEliminado)
+        const nuevoEstadoProductos = productos.filter(prod => prod.id !== id ) // hace que al borrar se vean en pantalla lo que se borra(form)
+        setProductos(nuevoEstadoProductos)
     } catch (error) {
-        
+        console.error('[eliminarProductoContext]', error)
+
     }
 }
 
@@ -60,7 +93,9 @@ const eliminarProductoContext = async (id) => {
     productos,
     crearProductoContext,
     actualizarProductoContext,
-    eliminarProductoContext
+    eliminarProductoContext,
+    productoAEditar,
+    setProductoAEditar
     }
 return <ProductosContext.Provider value={data}> {children} </ProductosContext.Provider>
 }

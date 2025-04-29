@@ -1,50 +1,59 @@
 {
   "productos": [
     {
-      "id": "1",
       "nombre": "Remera Paradise",
       "foto": "imgs/paradise-logo-pink.webp",
-      "descripcion": "Remera T-Shirt corta color pink",
-      "precio": 30
+      "detalles": "Remera T-Shirt corta color pink",
+      "precio": 30,
+      "stock": "100",
+      "marca": "Luxury Paradise",
+      "categoria": "remera streetwear",
+      "id": "1",
+      "envio": true
     },
     {
-      "id": "2",
       "nombre": "Remera Paradise",
       "foto": "imgs/paradise-logo-black.webp",
-      "descripcion": "Remera T-Shirt corta color black",
-      "precio": 33
+      "detalles": "Remera T-Shirt corta color black",
+      "precio": 33,
+      "stock": "90",
+      "marca": "Luxury Paradise",
+      "categoria": "remera streetwear",
+      "id": "2",
+      "envio": false
     },
     {
-      "id": "3",
       "nombre": "Remera Paradise",
       "foto": "imgs/paradise-japan.webp",
-      "descripcion": "Remera T-Shirt corta fondo wave behind",
-      "precio": 25
+      "detalles": "Remera T-Shirt corta fondo wave behind",
+      "precio": 25,
+      "stock": "50",
+      "marca": "Luxury Paradise",
+      "categoria": "remera streetwear",
+      "id": "3",
+      "envio": true
     },
     {
-      "id": "4",
       "nombre": "Remera Paradise",
       "foto": "imgs/paradise-project.webp",
-      "descripcion": "Remera T-Shirt corta fondo project behind",
-      "precio": 25
+      "detalles": "Remera T-Shirt corta fondo project behind",
+      "precio": 25,
+      "stock": "105",
+      "marca": "Luxury Paradise",
+      "categoria": "remera streetwear",
+      "id": "4",
+      "envio": true
     },
     {
-      "id": "5",
       "nombre": "Remera Paradise",
       "foto": "imgs/paradise-project-2.webp",
-      "descripcion": "Remera T-Shirt corta fondo project front",
-      "precio": 25
-    },
-    {
-      "id": "ccaf",
-      "nombre": "alejo",
-      "categoria": "Tecnología",
-      "precio": "777",
-      "stock": "f",
-      "marca": "Samsung",
-      "detalles": "sad",
-      "foto": "dasd",
-      "envio": true
+      "detalles": "Remera T-Shirt corta fondo project front",
+      "precio": 25,
+      "stock": "101",
+      "marca": "Luxury Paradise",
+      "categoria": "remera streetwear",
+      "id": "5",
+      "envio": false
     }
   ]
 }

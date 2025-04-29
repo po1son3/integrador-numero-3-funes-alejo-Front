@@ -4,7 +4,7 @@ import ProductosContext from '../../contexts/ProductosContext'
 import Swal from 'sweetalert2'
 
 const TablaFila = ({producto}) => {
-  const {eliminarProductoContext} = useContext(ProductosContext)
+  const {eliminarProductoContext, setProductoAEditar} = useContext(ProductosContext)
   const handleEliminar = (id) => {
     Swal.fire({
       title: "Borrar este elemento?",
@@ -25,6 +25,9 @@ const TablaFila = ({producto}) => {
       } 
     });
   }
+  const handleEditar = (producto) => {
+    setProductoAEditar(producto)
+  }
   return (
     <tr>
         <td>{producto.nombre}</td>
@@ -39,7 +42,7 @@ const TablaFila = ({producto}) => {
         <td>{producto.envio ? 'si' : 'no'}</td>
         <td>
             <button>Ver</button>
-            <button>Editar</button>
+            <button onClick={()=> handleEditar(producto)} >Editar</button> 
             <button onClick={() => handleEliminar(producto.id)}>Borrar</button>
         </td>
     </tr>

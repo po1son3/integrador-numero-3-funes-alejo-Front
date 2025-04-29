@@ -1,9 +1,12 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './Formulario.scss'
 import ProductosContext from '../../contexts/ProductosContext'
 
 const Formulario = () => {
-const {crearProductoContext} = useContext(ProductosContext)// traigo de productosContext
+const {crearProductoContext, 
+    productoAEditar, 
+    setProductoAEditar, 
+    actualizarProductoContext} = useContext(ProductosContext)// traigo de productosContext
     const formInicial = {
         id: null, 
         nombre: '',
@@ -15,12 +18,25 @@ const {crearProductoContext} = useContext(ProductosContext)// traigo de producto
         foto: '', 
         envio: false
     }
-const [form, setForm] = useState(formInicial)
+    const [form, setForm] = useState(formInicial)
+    useEffect(() => {
+        productoAEditar ? setForm(productoAEditar) : setForm(formInicial)
+    }, [productoAEditar])
+    
+
+
 
 const handleSubmit = (e) => {
+
     e.preventDefault()
-crearProductoContext(form) // lleno la cajita form con un nuevo producto
+    if(form.id === null){
+    crearProductoContext(form) // lleno la cajita form con un nuevo producto
+    }else {
+        actualizarProductoContext(form)
+    }
 }
+
+
 const handleChange = (e) => {
 const {type, name, checked, value} = e.target
 
@@ -28,10 +44,12 @@ setForm({
     ...form,
     [name]: type === 'checkbox' ? checked : value
 })
-
 }
+
+
 const handleReset = () => {
 setForm(formInicial)
+setProductoAEditar(null)
 }
 
 
