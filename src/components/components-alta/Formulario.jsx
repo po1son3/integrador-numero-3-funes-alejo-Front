@@ -1,22 +1,25 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './Formulario.scss'
+import ProductosContext from '../../contexts/ProductosContext'
 
 const Formulario = () => {
-
+const {crearProductoContext} = useContext(ProductosContext)// traigo de productosContext
     const formInicial = {
         id: null, 
         nombre: '',
         categoria: '',
         precio: '',
         stock: '',
-        detalle: '',
+        marca: '',
+        detalles: '',
         foto: '', 
         envio: false
     }
 const [form, setForm] = useState(formInicial)
 
-const handleSubmit = () => {
-
+const handleSubmit = (e) => {
+    e.preventDefault()
+crearProductoContext(form) // lleno la cajita form con un nuevo producto
 }
 const handleChange = (e) => {
 const {type, name, checked, value} = e.target
@@ -68,6 +71,15 @@ return (
         value={form.stock} 
         onChange={handleChange}/> 
     </div>
+    <div>
+        <label htmlFor="lbl-marca">Marca</label>
+        <input 
+        type="text" 
+        id="lbl-marca" 
+        name="marca" 
+        value={form.marca} 
+        onChange={handleChange}/> 
+    </div>
 
     <div>
         <label htmlFor="lbl-categoria">Categoria</label>
@@ -80,12 +92,12 @@ return (
     </div>
 
     <div>
-        <label htmlFor="lbl-detalle">Detalle</label>
+        <label htmlFor="lbl-detalle">Detalles</label>
         <input 
         type="text" 
-        id="lbl-detalle" 
-        name="detalle" 
-        value={form.detalle} 
+        id="lbl-detalles" 
+        name="detalles" 
+        value={form.detalles} 
         onChange={handleChange}/> 
     </div>
 

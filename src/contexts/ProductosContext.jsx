@@ -21,20 +21,46 @@ const getAllProductos = async () => {
     }
 }
 
-const crearProductoContext = (productoNuevo) => {// recibe producto nuevo
+const crearProductoContext = async (productoNuevo) => {// recibe producto nuevo
     try {
+    delete productoNuevo.id
     const options = {
         method: 'POST',
         header:{'content-type': 'application/json'},
         body: JSON.stringify(productoNuevo) // espera un string
     }
+
+    const prods = await peticionesHttp(url, options)
+    console.log(prods)
+    const nuevoEstadoProductos = [...productos, prods]
+    setProductos(nuevoEstadoProductos)
     } catch (error) {
-    console.error(error)
+    console.error('[crearProductoContext]',error)
+    }
+}
+const actualizarProductoContext = (productoAEditar) => {
+
+}
+const eliminarProductoContext = async (id) => {
+    try {
+        const urlEliminacion = url + id
+        const options = {
+            method: 'DELETE',
+        }
+        const prodEliminado = await peticionesHttp(urlEliminacion, options)
+        console.log(prodEliminado)
+    } catch (error) {
+        
     }
 }
 
-    const data = { // recibe todos los props
-    productos
+
+
+    const data = { // recibe todos los props, para sacar para afuera tengo que ponerlo acá
+    productos,
+    crearProductoContext,
+    actualizarProductoContext,
+    eliminarProductoContext
     }
 return <ProductosContext.Provider value={data}> {children} </ProductosContext.Provider>
 }

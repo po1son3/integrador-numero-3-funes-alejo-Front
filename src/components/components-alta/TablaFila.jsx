@@ -1,6 +1,30 @@
+import { useContext } from 'react'
 import './TablaFila.scss'
+import ProductosContext from '../../contexts/ProductosContext'
+import Swal from 'sweetalert2'
 
 const TablaFila = ({producto}) => {
+  const {eliminarProductoContext} = useContext(ProductosContext)
+  const handleEliminar = (id) => {
+    Swal.fire({
+      title: "Borrar este elemento?",
+      text: "No podrás revertir el proceso",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si,Borrar!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        eliminarProductoContext(id)
+        Swal.fire({
+          title: "Borrado!",
+          text: "El elemento ha sido borrado",
+          icon: "success"
+        });
+      } 
+    });
+  }
   return (
     <tr>
         <td>{producto.nombre}</td>
@@ -16,7 +40,7 @@ const TablaFila = ({producto}) => {
         <td>
             <button>Ver</button>
             <button>Editar</button>
-            <button>Borrar</button>
+            <button onClick={() => handleEliminar(producto.id)}>Borrar</button>
         </td>
     </tr>
   )

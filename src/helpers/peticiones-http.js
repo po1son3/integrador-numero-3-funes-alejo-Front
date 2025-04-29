@@ -5,7 +5,7 @@ export const peticionesHttp = async (url, options) => {
         throw new Error(`No se pudo realizar.Código error: ${res.status}`)
     }
     const data = await res.json()
-    console.log(data)
+    //console.log(data)
     return data
     } catch (error) {
     console.error( '[peticionesHttp]' ,error.message)
