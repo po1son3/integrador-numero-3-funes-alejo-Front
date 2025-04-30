@@ -5,7 +5,7 @@ import './ListadoCarrito.scss'
 
 const ListadoCarrito = () => {
 
-    const { carrito, limpiarCarritoContext } = useContext(CarritoContext)
+    const { carrito, limpiarCarritoContext, guardarCarritoBackendContext } = useContext(CarritoContext)
     
 
     const handleComprar = () => {
@@ -18,7 +18,7 @@ const ListadoCarrito = () => {
         limpiarCarritoContext()
     }
 
-  return (
+return (
     <>
     <table className='tabla-carrito'>
         <thead>
