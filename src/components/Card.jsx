@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import './Card.scss'
+import CarritoContext from '../contexts/CarritoContext'
 const Card = ({producto}) => {
 
 const {agregarProductoAlCarritoContext} = useContext(CarritoContext)
