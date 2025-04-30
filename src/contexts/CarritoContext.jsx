@@ -29,9 +29,14 @@ if(!elProductoEstaEnElCarrito(producto)) {
 }
 }
 
+const eliminarProductoDelCarritoContext = (id) => {
+eliminarDelCarrito(id)
+}
+
 const data = {
     agregarProductoAlCarritoContext,
-    carrito
+    carrito,
+    eliminarProductoDelCarritoContext
 }
 return <CarritoContext.Provider value={data}>{children}</CarritoContext.Provider>
 }
