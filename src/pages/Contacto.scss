@@ -1,0 +1,82 @@
+.main-form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+    margin: 40px 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);  
+    background-color: rgba(0, 0, 0, 0.7);  /* Negro con 70% de opacidad  */
+    color: #EAECEB; 
+
+
+&__field { /* lp logo */
+
+background-color: rgba(0, 0, 0, 0.5);
+width: 300px;
+height: 550px;
+text-align: center;
+padding-bottom: 50px;
+font-size: 15px;
+border-radius: 5px;
+box-shadow: 5px solid black;
+
+}
+
+&__legend { /* informacion personal */
+    background-color: black;
+    border: 1px solid white;
+    margin-bottom: 30px;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+&__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* hace que haya 20px entre los inputs */ 
+}
+
+&__name,
+&__mail,
+&__phone,
+&__description {
+    display: flex;
+    flex-direction: column; /* hace que esten en columnas de arriba para abajo los inputs */
+    text-align: center;
+    gap: 0.7rem;
+    padding-top: 10px ;
+}
+
+&__send {
+display: flex;
+flex-direction: column;
+padding: 10px;
+
+}
+
+&__send__button {
+    background-color: rgba(0, 0, 0, 0.3);
+    color:white;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.10);
+    }
+}
+
+} /* llave del main-form */
+
+iframe { /* mapa google local */
+    @media screen and (min-width: 700px) {
+        width: 70%;
+        height: 500px; 
+
+    }
+}
