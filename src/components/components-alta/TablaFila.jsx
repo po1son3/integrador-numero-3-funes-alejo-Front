@@ -38,18 +38,18 @@ const TablaFila = ({producto}) => {
   }
   return (
 <>
-    <tr>
+    <tr className="tabla-fila">
         <td>{producto.nombre}</td>
         <td>{producto.precio}</td>
         <td>{producto.stock}</td>
         <td>{producto.marca}</td>
         <td>{producto.categoria}</td>
         <td>{producto.detalles}</td>
-        <td>
+        <td className="tabla-fila__foto">
         <img src={producto.foto} alt={producto.nombre} style={{width: '40px'}} />
         </td>
         <td>{producto.envio ? 'si' : 'no'}</td>
-        <td>
+        <td className="tabla-fila__acciones">
             <button onClick={()=> handleVer(producto)}>Ver</button>
             <button onClick={()=> handleEditar(producto)} >Editar</button> 
             <button onClick={() => handleEliminar(producto.id)}>Borrar</button>
