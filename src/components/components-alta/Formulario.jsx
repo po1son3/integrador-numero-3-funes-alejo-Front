@@ -59,7 +59,7 @@ setProductoAEditar(null)
 return (
     <>
     <h2>Formulario de carga</h2>
-    <form   onSubmit={handleSubmit}>
+    <form className='formulario'  onSubmit={handleSubmit}>
 
     <div>
         <label htmlFor="lbl-nombre">Nombre</label>

@@ -11,9 +11,9 @@ const App = () => {
 
     <Rutas />
     
+    
+    
     <Footer />
-    
-    
     </BrowserRouter>
   )
 }

@@ -1,0 +1,37 @@
+.formulario {
+    width: 40%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #383D3B;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+
+    label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: center;
+    }
+
+    input,
+    select,
+    textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #272A29;
+    color: white;
+    border: 1px solid white;
+    border-radius: 14px;
+    }
+
+    button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #1D201F;
+
+    &:hover {
+    background-color: #272A29;
+    }
+    }
+}
