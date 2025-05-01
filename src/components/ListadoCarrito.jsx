@@ -46,17 +46,27 @@ return (
                 )
             }
         </tbody>
+        <tfoot>
+            <tr>
+            <td colSpan="5">Total:</td>
+            <td>{precioTotal}</td>
+            </tr>
+            <tr>
+            <td colSpan="5">Total de Carrito:</td>
+            <td>{totalDeProductos}</td>
+            </tr>
+        </tfoot>
     </table>
-    <hr />
     { !carrito.length <= 0 && (
-            <>
-                <p className="carrito-total"> {`Total: ${precioTotal}`}</p>
-                <p className="carrito-total"> {`Productos totales: ${totalDeProductos}`}</p>
-                <button onClick={handleLimpiarCarrito}>Vaciar Carrito</button>
-                <button onClick={handleComprar}>Comprar</button>
-            </>
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+        <div style={{ display: 'inline-flex', gap: '1rem' }}>
+        <button onClick={handleLimpiarCarrito}>Vaciar Carrito</button>
+        <button onClick={handleComprar}>Comprar</button>
+        </div>
+        </div>
         )
     }
+    
 </>
 )
 }
