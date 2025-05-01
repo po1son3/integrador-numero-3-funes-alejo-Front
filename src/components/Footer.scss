@@ -1,0 +1,58 @@
+.footer {
+    width: 100%;
+    background-color: #1D201F;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    &__lado-izquierdo-lp {
+        font-size: 30px;
+        font-weight: bold;
+        margin-left: 200px;
+    }
+    &__lado-derecho-content{
+        display: flex;
+        gap:40px
+    }
+    &__redes-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    
+    .link {
+        color: white;
+        text-decoration: none;
+        margin-right: 200px;
+    
+    &:hover {
+        text-decoration: underline;
+        }
+        }
+    }
+    &__nav-links-redirec {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    
+    .link {
+        color: white;
+        text-decoration: none;
+        margin-right: 250px;
+    
+    &:hover {
+        text-decoration: underline;
+        }
+        }
+    }
+    &__divider {
+        width: 1px;
+        height: 100px;
+        background-color: white;
+        border-left: 1px solid white;
+        margin: 0 20px;
+    }
+
+    }
+    
