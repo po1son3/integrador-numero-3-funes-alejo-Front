@@ -1,14 +1,25 @@
 table.tabla-carrito {
     border-collapse: collapse;
     width: 70%;
-    margin: 1rem auto;
-}
-th,td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-}
+    margin: 1rem auto; 
 
-th {
-    background-color: #f2f2f2;
-} 
+}
+th, td {
+    background-color: #272A29;
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+
+  thead {
+    background-color: #383D3B;
+
+    th {
+      background-color: #383D3B;
+      font-weight: bold;
+    }
+  }
+
+
+
