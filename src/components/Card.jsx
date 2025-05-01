@@ -19,8 +19,11 @@ return (
                 <div className="card__content">
                     <h2 className="card__heading">{producto.nombre}</h2>
                     <div className="card__description">
-                        <p>{producto.descripcion}</p>
-                        <button onClick={() => handleAgregar(producto)}>Agregar al Carrito</button>
+                        <p className='texto-centrado'>{producto.detalles}</p>
+                        <div>
+                        <p className='precio-lista'>{`$${producto.precio}`}</p>
+                        </div>
+                        <button className='btn-centrado' onClick={() => handleAgregar(producto)}>Agregar al Carrito</button>
                     </div>
                 </div>
             </article>

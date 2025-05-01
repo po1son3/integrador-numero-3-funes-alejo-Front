@@ -66,13 +66,13 @@ background: linear-gradient(90deg, rgba(234,236,235,1) 0%, rgba(56,61,59,1) 100%
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* Estado final */
     }
 
-    /* Responsive ->  992px */
+    /* Desktop ->  992px */
 
     @media screen and (min-width: 992px) {
         & { /* .card */
-            width: 220px;
-            max-width: 300px;
-            height: 400px;
+            width: 400px;
+            max-width: 500px;
+            height: 600px;
         }
 
         &__article { /* .card__article */
@@ -81,12 +81,27 @@ background: linear-gradient(90deg, rgba(234,236,235,1) 0%, rgba(56,61,59,1) 100%
         
         & &__image-container { /* .card .card__image-container */
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%px); /* Estado inicial */
+            height: 400px;
         }
 
         &:hover &__image-container,
         &:focus &__image-container {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%px); /* Estado final */
+            clip-path: polygon(0 0, 0% 0, 100% 100%, 0 100%px); /* Estado final */
         }
     }
 
+    
+}
+.btn-centrado{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+}
+.texto-centrado {
+    text-align: center;
+}
+.precio-lista{
+    text-align: left;
+    font-size: 20px;
+    margin-left: 10px
 }

@@ -57,10 +57,22 @@ const options = {
     }
 }
 
+const calcularTotalProductos = () => {
+    const total = carrito.reduce((acumulador, producto) => {
+    const cuenta = producto.cantidad * producto.precio 
+    return acumulador + cuenta
+    },0)
+    return total
+}
 
 
-
-
+const calcularTotalProductosCarritos = () => {
+    const total = carrito.reduce((acumulador,producto) => {
+    const cuenta = acumulador + producto.cantidad
+    return cuenta 
+},0) 
+return total
+}
 
 
 
@@ -69,7 +81,9 @@ const data = {
     carrito,
     eliminarProductoDelCarritoContext,
     limpiarCarritoContext,
-    guardarCarritoBackendContext
+    guardarCarritoBackendContext,
+    calcularTotalProductos,
+    calcularTotalProductosCarritos
 }
 return <CarritoContext.Provider value={data}>{children}</CarritoContext.Provider>
 }

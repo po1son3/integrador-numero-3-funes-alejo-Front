@@ -12,7 +12,7 @@ const Inicio = () => {
   <main>
     <section className="section-cards">
       <header className="section-cards__header">
-        <h1>Remera Type Logo Paradise</h1>
+        <h1>Explora nuestros productos</h1>
         <p>Se encontraron 5 productos</p>
       </header>
     </section>

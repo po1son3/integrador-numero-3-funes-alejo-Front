@@ -4,7 +4,7 @@
       "nombre": "Remera Paradise",
       "foto": "imgs/paradise-logo-pink.webp",
       "detalles": "Remera T-Shirt corta color pink",
-      "precio": 30,
+      "precio": 70000,
       "stock": "100",
       "marca": "Luxury Paradise",
       "categoria": "remera streetwear",
@@ -15,7 +15,7 @@
       "nombre": "Remera Paradise",
       "foto": "imgs/paradise-logo-black.webp",
       "detalles": "Remera T-Shirt corta color black",
-      "precio": 33,
+      "precio": 85000,
       "stock": "90",
       "marca": "Luxury Paradise",
       "categoria": "remera streetwear",
@@ -26,7 +26,7 @@
       "nombre": "Remera Paradise",
       "foto": "imgs/paradise-japan.webp",
       "detalles": "Remera T-Shirt corta fondo wave behind",
-      "precio": 25,
+      "precio": 85000,
       "stock": "50",
       "marca": "Luxury Paradise",
       "categoria": "remera streetwear",
@@ -37,7 +37,7 @@
       "nombre": "Remera Paradise",
       "foto": "imgs/paradise-project.webp",
       "detalles": "Remera T-Shirt corta fondo project behind",
-      "precio": 25,
+      "precio": 85000,
       "stock": "105",
       "marca": "Luxury Paradise",
       "categoria": "remera streetwear",
@@ -48,7 +48,7 @@
       "nombre": "Remera Paradise",
       "foto": "imgs/paradise-project-2.webp",
       "detalles": "Remera T-Shirt corta fondo project front",
-      "precio": 25,
+      "precio": 75000,
       "stock": "101",
       "marca": "Luxury Paradise",
       "categoria": "remera streetwear",
@@ -57,44 +57,6 @@
     }
   ],
   "carrito": [
-    {
-      "0": {
-        "nombre": "Remera Paradise",
-        "foto": "imgs/paradise-logo-pink.webp",
-        "detalles": "Remera T-Shirt corta color pink",
-        "precio": 30,
-        "stock": "100",
-        "marca": "Luxury Paradise",
-        "categoria": "remera streetwear",
-        "id": "1",
-        "envio": true,
-        "cantidad": 1
-      },
-      "1": {
-        "nombre": "Remera Paradise",
-        "foto": "imgs/paradise-logo-black.webp",
-        "detalles": "Remera T-Shirt corta color black",
-        "precio": 33,
-        "stock": "90",
-        "marca": "Luxury Paradise",
-        "categoria": "remera streetwear",
-        "id": "2",
-        "envio": false,
-        "cantidad": 1
-      },
-      "2": {
-        "nombre": "Remera Paradise",
-        "foto": "imgs/paradise-japan.webp",
-        "detalles": "Remera T-Shirt corta fondo wave behind",
-        "precio": 25,
-        "stock": "50",
-        "marca": "Luxury Paradise",
-        "categoria": "remera streetwear",
-        "id": "3",
-        "envio": true,
-        "cantidad": 1
-      },
-      "id": "919b"
-    }
+    
   ]
 }

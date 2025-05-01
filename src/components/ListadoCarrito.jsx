@@ -5,7 +5,7 @@ import './ListadoCarrito.scss'
 
 const ListadoCarrito = () => {
 
-    const { carrito, limpiarCarritoContext, guardarCarritoBackendContext } = useContext(CarritoContext)
+    const { carrito, limpiarCarritoContext, guardarCarritoBackendContext, calcularTotalProductos, calcularTotalProductosCarritos} = useContext(CarritoContext)
     
 
     const handleComprar = () => {
@@ -18,6 +18,8 @@ const ListadoCarrito = () => {
         limpiarCarritoContext()
     }
 
+    const precioTotal = calcularTotalProductos()
+    const totalDeProductos = calcularTotalProductosCarritos()
 return (
     <>
     <table className='tabla-carrito'>
@@ -28,6 +30,7 @@ return (
                 <th>Cantidad</th>
                 <th>Precio</th>
                 <th>Acciones</th>
+                <th>Subtotal</th>
             </tr>
         </thead>
         <tbody>
@@ -47,13 +50,15 @@ return (
     <hr />
     { !carrito.length <= 0 && (
             <>
+                <p className="carrito-total"> {`Total: ${precioTotal}`}</p>
+                <p className="carrito-total"> {`Productos totales: ${totalDeProductos}`}</p>
                 <button onClick={handleLimpiarCarrito}>Vaciar Carrito</button>
                 <button onClick={handleComprar}>Comprar</button>
             </>
         )
     }
 </>
-  )
+)
 }
 
 export default ListadoCarrito
