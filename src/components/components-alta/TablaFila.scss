@@ -1,0 +1,19 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999; 
+  }
+  
+
+  .imagen-grande-centrada {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+  }

@@ -1,10 +1,11 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import './TablaFila.scss'
 import ProductosContext from '../../contexts/ProductosContext'
 import Swal from 'sweetalert2'
 
 const TablaFila = ({producto}) => {
   const {eliminarProductoContext, setProductoAEditar} = useContext(ProductosContext)
+  const [verImagen, setVerImagen] = useState(null)
   const handleEliminar = (id) => {
     Swal.fire({
       title: "Borrar este elemento?",
@@ -28,7 +29,15 @@ const TablaFila = ({producto}) => {
   const handleEditar = (producto) => {
     setProductoAEditar(producto)
   }
+
+  const handleVer = (producto) => {
+    setVerImagen(producto.foto)
+  }
+  const sacarImg = (img) => {
+    setVerImagen(null)
+  }
   return (
+<>
     <tr>
         <td>{producto.nombre}</td>
         <td>{producto.precio}</td>
@@ -37,16 +46,22 @@ const TablaFila = ({producto}) => {
         <td>{producto.categoria}</td>
         <td>{producto.detalles}</td>
         <td>
-            <img src={producto.foto} alt={producto.nombre} style={{width: '40px'}} />
+        <img src={producto.foto} alt={producto.nombre} style={{width: '40px'}} />
         </td>
         <td>{producto.envio ? 'si' : 'no'}</td>
         <td>
-            <button>Ver</button>
+            <button onClick={()=> handleVer(producto)}>Ver</button>
             <button onClick={()=> handleEditar(producto)} >Editar</button> 
             <button onClick={() => handleEliminar(producto.id)}>Borrar</button>
         </td>
     </tr>
-  )
+      {verImagen && (
+        <div className="modal" onClick={sacarImg}>
+        <img src={verImagen} alt="imagen centrada" className='imagen-grande-centrada'/>
+        </div>
+      )}
+</>
+)
 }
 
 export default TablaFila
