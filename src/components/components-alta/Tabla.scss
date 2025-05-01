@@ -1,0 +1,23 @@
+.table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #383D3B;
+    color: white;
+  
+    th, td {
+      background-color: #272A29;
+      border: 1px solid white;
+      padding: 10px;
+      text-align: left;
+    }
+  
+    thead {
+      background-color: #383D3B;
+  
+      th {
+        background-color: #383D3B;
+        font-weight: bold;
+      }
+    }
+  }
