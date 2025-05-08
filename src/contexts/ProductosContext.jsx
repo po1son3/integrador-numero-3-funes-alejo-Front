@@ -1,10 +1,11 @@
 import { createContext, useEffect, useState } from "react";
 import { peticionesHttp } from "../helpers/peticiones-http";
-import { API_PRODUCTOS_URL } from "../config/apiConfig";
+
 
 const ProductosContext = createContext()
 
-const ProductosProvider = ({children}) => { // aca va el contenido, recibe children
+const ProductosProvider = ({children}) => { 
+const url = import.meta.env.VITE_BACKEND_PRODUCTOS
 const [productos, setProductos] = useState(null) // esto está null porque productos hasta ahora por defecto está vacío.
 
 const [productoAEditar, setProductoAEditar] = useState(null)
@@ -16,7 +17,7 @@ useEffect(() => {
 //! TODOS LOS PRODS
 const getAllProductos = async () => {
     try {
-        const prods =  await peticionesHttp(API_PRODUCTOS_URL) // hace una peticion a la url, cuando llegue algo lo guarda en prods
+        const prods =  await peticionesHttp(url, {}) // hace una peticion a la url, cuando llegue algo lo guarda en prods
         setProductos(prods) // sirve para llenar productos con el array de json server, hace que se llene productos
     } catch (error) {
         console.error('[gettAllProductos]', error)
@@ -32,7 +33,7 @@ const crearProductoContext = async (productoNuevo) => {// recibe producto nuevo
         body: JSON.stringify(productoNuevo) // espera un string
     }
 
-    const prods = await peticionesHttp(API_PRODUCTOS_URL, options)
+    const prods = await peticionesHttp(url, options)
     console.log(prods)
     const nuevoEstadoProductos = [...productos, prods]
     setProductos(nuevoEstadoProductos)
@@ -57,7 +58,7 @@ try {
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(productoAEditar)
     }
-    const urlActualizar = `${API_PRODUCTOS_URL}/${productoAEditar.id}`
+    const urlActualizar = url + productoAEditar.id
      const productoEditado = await peticionesHttp(urlActualizar, options)
      console.log(productoEditado)
      const nuevoEstadoProductos = productos.map(prod => prod.id === productoEditado.id ? productoEditado : prod)
@@ -73,7 +74,7 @@ try {
 
 const eliminarProductoContext = async (id) => {
     try {
-        const urlEliminacion = `${API_PRODUCTOS_URL}/${id}`
+        const urlEliminacion = url + id
         const options = {
             method: 'DELETE',
         }

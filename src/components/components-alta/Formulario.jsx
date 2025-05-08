@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import './Formulario.scss'
 import ProductosContext from '../../contexts/ProductosContext'
+import DragDrop from './DragDrop'
 
 const Formulario = () => {
 const {crearProductoContext, 
@@ -19,6 +20,8 @@ const {crearProductoContext,
         envio: false
     }
     const [form, setForm] = useState(formInicial)
+    const [foto, setFoto] = useState('')
+    const [srcImagenBack, setSrcImagenBack] = useState('')
     useEffect(() => {
         productoAEditar ? setForm(productoAEditar) : setForm(formInicial)
     }, [productoAEditar])
@@ -118,7 +121,13 @@ return (
         value={form.detalles} 
         onChange={handleChange}/> 
     </div>
-
+    <div>
+        <DragDrop 
+        setFoto={setFoto} 
+        srcImagenBack={srcImagenBack} 
+        setSrcImagenBack={setSrcImagenBack}       
+        />
+    </div>
     <div>
         <label htmlFor="lbl-foto">Foto</label>
         <input 

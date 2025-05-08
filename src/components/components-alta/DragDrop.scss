@@ -1,0 +1,42 @@
+.drop-area {
+    border: 2px dashed white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 700px;
+    margin: 25px auto; 
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+
+    & p {
+    margin-bottom: 30px;
+    }
+
+    &-button {
+    width: 100%;
+    max-width: 250px;
+    display: inline-block;
+    padding: 10px;
+    background: #272A29;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid white;
+
+    &:hover {
+        background-color: black;
+    }
+}
+
+    & #lbl-foto {
+    display: none;
+    }
+
+    &-image img {
+    width: 150px;
+    margin-top: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+    }
+}
