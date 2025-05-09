@@ -49,8 +49,9 @@ const previewFile = (file) => {
     })
 }   
 
-const handleChange = () => {
-
+const handleChange = (e) => {
+    const files = e.target.files
+    handleFiles(files)
 }
 
 const srcImagen = ''
