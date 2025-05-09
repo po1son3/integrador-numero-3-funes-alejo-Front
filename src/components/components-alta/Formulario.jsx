@@ -54,6 +54,8 @@ setForm({
 
 
 const handleReset = () => {
+setFoto('') // se puede poner una img también
+setSrcImagenBack('')
 setForm(formInicial)
 setProductoAEditar(null)
 }
@@ -131,16 +133,6 @@ return (
         setSrcImagenBack={setSrcImagenBack}       
         />
     </div>
-    <div>
-        <label htmlFor="lbl-foto">Foto</label>
-        <input 
-        type="text" 
-        id="lbl-foto" 
-        name="foto" 
-        value={form.foto} 
-        onChange={handleChange}/> 
-    </div>
-
     <div>
         <label htmlFor="lbl-envio">Envío</label>
         <input 
