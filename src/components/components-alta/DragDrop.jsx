@@ -1,3 +1,4 @@
+import { peticionesHttp } from '../../helpers/peticiones-http'
 import './DragDrop.scss'
 
 const DragDrop = ({setFoto, srcImagenBack, setSrcImagenBack}) => {
@@ -12,14 +13,31 @@ const handleDrop = (e) => {// con este handle la idea es detener el comportamien
     handleFiles(files)
 }
 
-const handleFiles = (files) => {
+const handleFiles = async (files) => {
     const file = files[0]
-    uploadFile(file)
+    await uploadFile(file)
     previewFile(file)
 }
 
-const uploadFile = (file) => {
+const uploadFile = async (file) => {
+    const url = import.meta.env.VITE_BACKEND_UPLOAD
     console.log('Llegó a upload', file)
+
+    try {
+        const formData = new FormData()
+
+        formData.append('imagen', file)
+
+        const options = {
+            method: 'POST',
+            body: formData
+        }
+        const imagenUp = await peticionesHttp(url, options)
+        console.log(imagenUp)
+    } catch (error) {
+        console.log('[uploadFile]', error)
+    }
+
 }
 
 const previewFile = (file) => {
