@@ -33,9 +33,12 @@ const handleSubmit = (e) => {
 
     e.preventDefault()
     if(form.id === null){
-    crearProductoContext(form) // lleno la cajita form con un nuevo producto
+    const productoNuevoConImagen = {...form, ...foto}
+    crearProductoContext(productoNuevoConImagen) // lleno la cajita form con un nuevo producto
+    
     }else {
-        actualizarProductoContext(form)
+        const productoNuevoConImagen = {...form, ...foto}
+        actualizarProductoContext(productoNuevoConImagen)
     }
 }
 

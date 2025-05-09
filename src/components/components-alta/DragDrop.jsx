@@ -33,7 +33,7 @@ const uploadFile = async (file) => {
             body: formData
         }
         const imagenUp = await peticionesHttp(url, options)
-        console.log(imagenUp)
+        setFoto(imagenUp)
     } catch (error) {
         console.log('[uploadFile]', error)
     }
