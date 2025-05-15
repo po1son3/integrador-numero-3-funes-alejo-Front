@@ -20,8 +20,8 @@ const {crearProductoContext,
         envio: false
     }
     const [form, setForm] = useState(formInicial)
-    const [foto, setFoto] = useState('')
-    const [srcImagenBack, setSrcImagenBack] = useState('')
+    const [foto, setFoto] = useState(null)
+    const [srcImagenBack, setSrcImagenBack] = useState(null)
     useEffect(() => {
         productoAEditar ? setForm(productoAEditar) : setForm(formInicial)
     }, [productoAEditar])
@@ -54,8 +54,8 @@ setForm({
 
 
 const handleReset = () => {
-setFoto('') // se puede poner una img también
-setSrcImagenBack('')
+setFoto(null) // se puede poner una img también
+setSrcImagenBack(null)
 setForm(formInicial)
 setProductoAEditar(null)
 }
