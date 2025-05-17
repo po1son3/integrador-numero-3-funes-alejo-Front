@@ -91,7 +91,7 @@ background: linear-gradient(90deg, rgba(234,236,235,1) 0%, rgba(56,61,59,1) 100%
     }
 
     
-}
+
 .btn-centrado{
     display: block;
     margin: 0 auto;
@@ -104,4 +104,41 @@ background: linear-gradient(90deg, rgba(234,236,235,1) 0%, rgba(56,61,59,1) 100%
     text-align: left;
     font-size: 20px;
     margin-left: 10px
+}
+
+  @media screen and (max-width: 600px) {
+    & {
+      min-width: 90vw;
+      max-width: 90vw;
+      height: auto;
+      margin: 10px auto; 
+    }
+
+    &__article {
+      flex-direction: column;
+    }
+
+    &__image-container {
+      height: 400px;
+      clip-path: none; 
+    }
+
+    &:hover &__image-container,
+    &:focus &__image-container {
+      clip-path: none;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 991px) {
+  .card {
+    width: 90%;
+    max-width: 500px;
+    height: 300px; // o el que te sirva visualmente
+    margin: 10px auto;
+  }
+
+  .card__image-container {
+    height: 370px;
+  }
 }
