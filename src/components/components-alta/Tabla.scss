@@ -1,5 +1,12 @@
+.table-container {
+  width: 90%;
+  margin: 0 auto;
+  overflow-x: auto;
+  scrollbar-color: white #272a29;
+  scrollbar-width: thin;
+}
 .table {
-    width: 90%;
+    min-width: 900px;
     margin: 0 auto;
     border-collapse: collapse;
     background-color: #383D3B;
@@ -10,6 +17,7 @@
       border: 1px solid white;
       padding: 10px;
       text-align: left;
+      white-space: nowrap;
     }
   
     thead {
