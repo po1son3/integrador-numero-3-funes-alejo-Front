@@ -17,7 +17,9 @@ p {
 }
 
 
-body {
+body,html {
+    max-width: 100%;
+  overflow-x: hidden;
     font-family: "Noto Serif Hentaigana", serif;
     font-size: 100%; // default navegadores 16px
 }

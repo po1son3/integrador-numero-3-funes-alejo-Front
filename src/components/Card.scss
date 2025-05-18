@@ -72,8 +72,8 @@
   /* Móvil */
   @media screen and (max-width: 600px) {
     & {
-      min-width: 90vw;
-      max-width: 90vw;
+      width: 90%;
+      max-width: 500px;
       height: auto;
       margin: 10px auto;
     }

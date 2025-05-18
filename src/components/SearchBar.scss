@@ -26,7 +26,7 @@
         }
         .texto-corto { 
             display: block;
-            font-size: 28px;
+            font-size: 25px;
         }
     
         @media screen and (min-width:992px) {
@@ -72,7 +72,7 @@
         font-family: "Open Sans", sans-serif;
         color: #EAECEB; 
         padding: 5px 10px; 
-        font-size: 14px;
+        font-size: 10px;
         border-radius: 4px;
         margin: 5px;
         white-space: nowrap; /* esto hace que el texto no se desborde, que esté en una sola línea */
@@ -87,8 +87,8 @@
 
     &__form-search { /* buscador(espacio en donde se escribe) */ 
         background-color: #EAECEB;
-        width: 100%;/*  hace que ocupe todo pero todo el espacio del contenedor, se arreglará */
-        min-width: 110px;
+        width: 80%;/*  hace que ocupe todo pero todo el espacio del contenedor, se arreglará */
+        min-width: 100px;
         height: 30px;
         border-radius: 4px;
         display: flex;
@@ -96,7 +96,7 @@
         
 
         @media screen and (min-width: 576px) {
-            min-width: 200px;
+            min-width: 150px;
             border-radius: 12px;
             
         }
@@ -107,9 +107,9 @@
     &__form-submit { /* boton de buscar(button) */
         background-color: #383D3B;
         color: #EAECEB;
-        padding:5px 15px;
-        font-size: 14px;
-        border-radius: 6px;
+        padding:5px 13px;
+        font-size: 12px;
+        border-radius: 5px;
         cursor: pointer;
 
     
