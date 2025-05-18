@@ -5,7 +5,7 @@ const Nosotros = () => {
   return (
   <main>
   <img 
-    src="/public/imgs/luxury-paradise.webp" 
+    src="/imgs/luxury-paradise.webp" 
     alt="tienda de ropa" 
     className="imagen-centrada"
   />
